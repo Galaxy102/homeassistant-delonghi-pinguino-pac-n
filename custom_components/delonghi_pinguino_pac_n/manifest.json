@@ -2,9 +2,11 @@
   "domain": "delonghi_pinguino_pac_n",
   "name": "Delonghi Pinguino PAC N",
   "codeowners": ["@Galaxy102"],
+  "version": "0.1.0",
   "config_flow": true,
   "dependencies": ["infrared"],
   "documentation": "https://github.com/Galaxy102/homeassistant-delonghi-pinguino-pac-n/blob/main/README.md",
+  "issue_tracker": "https://github.com/Galaxy102/homeassistant-delonghi-pinguino-pac-n/issues",
   "integration_type": "device",
   "iot_class": "assumed_state"
 }
