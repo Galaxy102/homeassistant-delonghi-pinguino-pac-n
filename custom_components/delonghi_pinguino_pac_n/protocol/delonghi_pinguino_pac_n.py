@@ -126,7 +126,7 @@ class Temperature:
         temperature = self._temperature
         # For °C, temperature must be reduced by 16
         if not self._is_fahrenheit:
-            temperature = self._temperature
+            temperature = self._temperature - 16
         # Interpret MSb first (Python) as LSb first (HVAC) to have sendable value
         return int(bin(temperature)[2:].zfill(8)[::-1], base=2)
 
