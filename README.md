@@ -1,5 +1,7 @@
 # Delonghi Pinguino PAC N portable climate integration for HomeAssistant
 
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Galaxy102&repository=homeassistant-delonghi-pinguino-pac-n&category=integration)
+
 ## Functions
 The following functions are supported:
 - General
