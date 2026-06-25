@@ -25,12 +25,9 @@ from .const import (
     CONF_DEFAULT_TEMPERATURE,
     CONF_INFRARED_EMITTER_ENTITY_ID,
     CONF_INFRARED_RECEIVER_ENTITY_ID,
-    CONF_MODEL,
     CONF_TEMPERATURE_UNIT,
     DOMAIN,
-    MODEL_NAMES,
     TEMPERATURE_UNIT_TO_NATIVE,
-    DelonghiInfraredModel,
 )
 from .protocol.delonghi_pinguino_pac_n import (
     DeviceMode,
@@ -51,12 +48,10 @@ async def async_setup_entry(
     async_add_entities: AddConfigEntryEntitiesCallback,
 ) -> None:
     """Set up Delonghi climate from config entry."""
-    device_model = entry.data[CONF_MODEL]
-    if device_model == DelonghiInfraredModel.PAC_N_82_ECO:
-        async_add_entities([DelonghiClimatePacNEcoSeries(entry=entry)])
+    async_add_entities([ClimateDelonghiPinguinoPacNEco(entry=entry)])
 
 
-class DelonghiClimatePacNEcoSeries(
+class ClimateDelonghiPinguinoPacNEco(
     InfraredEmitterConsumerEntity, InfraredReceiverConsumerEntity, ClimateEntity
 ):
     """Delonghi Climate PAC N Eco Series entity."""
@@ -95,7 +90,7 @@ class DelonghiClimatePacNEcoSeries(
         self._attr_unique_id = f"{entry.entry_id}_climate"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, entry.entry_id)},
-            name=MODEL_NAMES[entry.data[CONF_MODEL]],
+            name="PAC N Eco",
             manufacturer="Delonghi",
         )
         self._infrared_emitter_entity_id = entry.data[CONF_INFRARED_EMITTER_ENTITY_ID]

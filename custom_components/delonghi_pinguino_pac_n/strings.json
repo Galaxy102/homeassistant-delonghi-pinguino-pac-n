@@ -11,7 +11,6 @@
     "step": {
       "user": {
         "data": {
-          "model": "[%key:common::generic::model%]",
           "infrared_entity_id": "[%key:common::config_flow::data::infrared_entity_id%]",
           "infrared_receiver_entity_id": "[%key:common::config_flow::data::infrared_receiver_entity_id%]",
           "default_fan_mode": "Default Fan mode",
@@ -19,19 +18,17 @@
           "temperature_unit": "Temperature Unit"
         },
         "data_description": {
-          "model": "The model of Delonghi climate device to control.",
           "infrared_entity_id": "[%key:common::config_flow::data_description::infrared_entity_id%]",
           "infrared_receiver_entity_id": "The infrared receiver entity to use for receiving signals.",
           "default_fan_mode": "Fan mode to set on initialization.",
           "default_temperature": "Temperature to set on initialization.",
           "temperature_unit": "Temperature unit to use when communicating with the device."
         },
-        "description": "Select the device type and at least one infrared emitter or receiver to use with your Delonghi climate device.",
+        "description": "Select at least one infrared emitter or receiver to use with your Delonghi climate device.",
         "title": "Set up Delonghi Climate IR Remote"
       },
       "reconfigure": {
         "data": {
-          "model": "[%key:common::generic::model%]",
           "infrared_entity_id": "[%key:common::config_flow::data::infrared_entity_id%]",
           "infrared_receiver_entity_id": "[%key:common::config_flow::data::infrared_receiver_entity_id%]",
           "default_fan_mode": "Default Fan mode",
@@ -39,14 +36,13 @@
           "temperature_unit": "Temperature Unit"
         },
         "data_description": {
-          "model": "The model of Delonghi climate device to control.",
           "infrared_entity_id": "[%key:common::config_flow::data_description::infrared_entity_id%]",
           "infrared_receiver_entity_id": "The infrared receiver entity to use for receiving signals.",
           "default_fan_mode": "Fan mode to set on initialization.",
           "default_temperature": "Temperature to set on initialization.",
           "temperature_unit": "Temperature unit to use when communicating with the device."
         },
-        "description": "Select the device type and at least one infrared emitter or receiver to use with your Delonghi climate device.",
+        "description": "Select at least one infrared emitter or receiver to use with your Delonghi climate device.",
         "title": "Set up Delonghi Climate IR Remote"
       }
     }

@@ -33,12 +33,9 @@ from .const import (
     CONF_DEFAULT_TEMPERATURE,
     CONF_INFRARED_EMITTER_ENTITY_ID,
     CONF_INFRARED_RECEIVER_ENTITY_ID,
-    CONF_MODEL,
     CONF_TEMPERATURE_UNIT,
     DOMAIN,
-    MODEL_NAMES,
     TEMPERATURE_UNIT_TO_NATIVE,
-    DelonghiInfraredModel,
     ConfigFanMode,
     TemperatureUnit,
 )
@@ -77,8 +74,6 @@ class DelonghiInfraredConfigFlow(ConfigFlow, domain=DOMAIN):
                 errors["base"] = "default_temperature_out_of_bounds"
 
             if not errors:
-                device_model = user_input[CONF_MODEL]
-
                 # Get IR device name for the title
                 dev_reg = dr.async_get(self.hass)
                 ent_reg = er.async_get(self.hass)
@@ -89,10 +84,9 @@ class DelonghiInfraredConfigFlow(ConfigFlow, domain=DOMAIN):
                     if parent_device
                     else entity_id
                 )
-                device_model_name = MODEL_NAMES[DelonghiInfraredModel(device_model)]
-                title = f"Delonghi {device_model_name} via {parent_name}"
+                title = f"Delonghi Pinguino PAC N via {parent_name}"
 
-                await self.async_set_unique_id(f"{DOMAIN}_{device_model}_{entity_id}")
+                await self.async_set_unique_id(f"{DOMAIN}_{entity_id}")
                 if self.source == SOURCE_RECONFIGURE:
                     self._abort_if_unique_id_mismatch()
                     return self.async_update_reload_and_abort(
@@ -105,18 +99,6 @@ class DelonghiInfraredConfigFlow(ConfigFlow, domain=DOMAIN):
                     return self.async_create_entry(title=title, data=user_input)
 
         schema_dict: dict[vol.Marker, Any] = {
-            vol.Required(CONF_MODEL): SelectSelector(
-                SelectSelectorConfig(
-                    options=[
-                        SelectOptionDict(
-                            value=device_model.value, label=MODEL_NAMES[device_model]
-                        )
-                        for device_model in DelonghiInfraredModel
-                    ],
-                    translation_key=CONF_MODEL,
-                    mode=SelectSelectorMode.DROPDOWN,
-                )
-            ),
             vol.Required(CONF_INFRARED_EMITTER_ENTITY_ID): EntitySelector(
                 EntitySelectorConfig(
                     domain=INFRARED_DOMAIN,

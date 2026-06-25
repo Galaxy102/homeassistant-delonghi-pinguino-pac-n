@@ -24,22 +24,12 @@ class ConfigFanMode(StrEnum):
     HIGH = FAN_HIGH
 
 
-class DelonghiInfraredModel(StrEnum):
-    """Delonghi Infrared model codes."""
-
-    PAC_N_82_ECO = "pac_n_82_eco"
-
-
 class TemperatureUnit(StrEnum):
     """Delonghi Infrared temperature units limited to available ones."""
 
     CELSIUS = "celsius"
     FAHRENHEIT = "fahrenheit"
 
-
-MODEL_NAMES: dict[DelonghiInfraredModel, str] = {
-    DelonghiInfraredModel.PAC_N_82_ECO: "PAC N ECO series"  # Tested with PAC N77 ECO, at least the more popular PAC N82 ECO has the same remote. According to SmartIR, PAC AN111 also has the same remote.
-}
 
 TEMPERATURE_UNIT_TO_NATIVE: dict[TemperatureUnit, UnitOfTemperature] = {
     TemperatureUnit.CELSIUS: UnitOfTemperature.CELSIUS,
