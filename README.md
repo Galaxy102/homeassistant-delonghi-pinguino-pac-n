@@ -12,7 +12,7 @@ The following functions are supported:
   - Device Mode (Cool, Dry, Fan)
 
 Not supported:
-- Timer
+- Timer (will always be set to run indefinitely by this integration)
 
 ## How I got here
 I captured Pronto codes with ESPHome's Infrared Receiver entity.
