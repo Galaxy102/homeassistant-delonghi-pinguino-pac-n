@@ -88,4 +88,4 @@ Known models with the same or a compatible remote are: (source: https://www.remo
 
 ## License
 
-This project is licensed under the MIT license. See [LICENSE](LICENSE) for details.
+This project (except the branding) is licensed under the MIT license. See [LICENSE](LICENSE) for details.
