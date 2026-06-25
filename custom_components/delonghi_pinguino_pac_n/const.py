@@ -13,7 +13,7 @@ CONF_DEFAULT_FAN_MODE = "default_fan_mode"
 CONF_DEFAULT_TEMPERATURE = "default_temperature"
 CONF_INFRARED_EMITTER_ENTITY_ID = "infrared_entity_id"
 CONF_INFRARED_RECEIVER_ENTITY_ID = "infrared_receiver_entity_id"
-DOMAIN = "delonghi_pac_n"
+DOMAIN = "delonghi_pinguino_pac_n"
 
 
 class ConfigFanMode(StrEnum):
